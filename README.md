@@ -1,5 +1,7 @@
 # bif3-swen1-net
 
+a fork of https://github.com/fhtw-altenhof/bif3-swe1-net
+
 Sample implementations for the OOP paradigma,
 OOP-design-approaches and a ShapeLibarary sample.
 
