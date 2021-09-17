@@ -66,10 +66,20 @@ namespace Bif3.Swe1.Oop {
             abstractCircle.ShowOrigin();
             double abstractCircleArea = abstractCircle.GetArea();
 
+            AbstractShape abstractRect = new DerivedRectangle(0, 0, 1, 1);
+            abstractRect.ShowOrigin();
+            double abstractRectArea = abstractRect.GetArea();
+
+            AbstractShape abstractSquare = new DerivedSquare(5, 5, 10);
+            abstractSquare.ShowOrigin();
+            double abstractSquareArea = abstractSquare.GetArea();
+
             DerivedCompoundShape derivedCompound = new DerivedCompoundShape(7, 7);
             derivedCompound.Add(abstractLine);
             derivedCompound.Add(abstractCircle);
             derivedCompound.Add(new DerivedLine(3, 4, 5, 6));
+            derivedCompound.Add(abstractRect);
+            derivedCompound.Add(abstractSquare);
             derivedCompound.ShowOrigin();
             derivedCompound.PrintShapeType();
 
@@ -92,6 +102,8 @@ namespace Bif3.Swe1.Oop {
             betterCompound.Add(betterLine);
             betterCompound.Add(betterCircle);
             betterCompound.Add(new BetterLine(3, 4, 5, 6));
+            betterCompound.Add(new BetterRectangle(3, 4, 5, 6));
+            betterCompound.Add(new BetterSquare(5, 5, 10));
             betterCompound.ShowOrigin();
             betterCompound.PrintShapeType();
 
@@ -110,6 +122,8 @@ namespace Bif3.Swe1.Oop {
             compoundShape.Add(line);
             compoundShape.Add(circle);
             compoundShape.Add(new Line(3, 4, 5, 6));
+            compoundShape.Add(new Rectangle(3, 4, 5, 6));
+            compoundShape.Add(new Square(5, 5, 10));
             compoundShape.ShowOrigin();
             compoundShape.PrintShapeType();
 
