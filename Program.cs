@@ -6,9 +6,12 @@ using Bif3.Swe1.Oop.Polymorphism.OptimizedSolution;
 using Bif3.Swe1.Oop.ShapeStackGit;
 using System;
 
-namespace Bif3.Swe1.Oop {
-    class Program {
-        static void Main(string[] args) {
+namespace Bif3.Swe1.Oop
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
 
             // naming conventions
             // https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/general-naming-conventions?redirectedfrom=MSDN
@@ -61,6 +64,7 @@ namespace Bif3.Swe1.Oop {
             AbstractShape abstractLine = new DerivedLine(0, 1, 1, 1);
             abstractLine.ShowOrigin();
             double abstractLinePerimeter = abstractLine.GetPerimeter();
+            Console.WriteLine(abstractLine.GetJSON());
 
             AbstractShape abstractCircle = new DerivedCircle(5, 5, 3);
             abstractCircle.ShowOrigin();
@@ -74,12 +78,16 @@ namespace Bif3.Swe1.Oop {
             abstractSquare.ShowOrigin();
             double abstractSquareArea = abstractSquare.GetArea();
 
+            AbstractShape abstractPyramid = new DerivedPyramid(2, 3, 5, 5);
+
+
             DerivedCompoundShape derivedCompound = new DerivedCompoundShape(7, 7);
             derivedCompound.Add(abstractLine);
             derivedCompound.Add(abstractCircle);
             derivedCompound.Add(new DerivedLine(3, 4, 5, 6));
             derivedCompound.Add(abstractRect);
             derivedCompound.Add(abstractSquare);
+            derivedCompound.Add(abstractPyramid);
             derivedCompound.ShowOrigin();
             derivedCompound.PrintShapeType();
 
@@ -92,10 +100,13 @@ namespace Bif3.Swe1.Oop {
             // Polymorphism with interfaces
             IBetterShapeComposition betterLine = new BetterLine(0, 1, 1, 1);
             betterLine.ShowOrigin();
-            double betterLinePerimeter = betterLine.GetPerimeter();
+            if (betterLine is IBetterShapeMath sm)
+            {
+                double betterLinePerimeter = sm.GetPerimeter();
+            }
 
             IBetterShapeComposition betterCircle = new BetterCircle(5, 5, 3);
-            double betterCircleArea = betterCircle.GetArea();
+            double betterCircleArea = ((IBetterShapeMath)betterCircle).GetArea();
             betterCircle.ShowOrigin();
 
             BetterCompoundShape betterCompound = new BetterCompoundShape(7, 7);
@@ -115,7 +126,7 @@ namespace Bif3.Swe1.Oop {
             double linePerimeter = line.GetPerimeter();
 
             Circle circle = new Circle(5, 5, 3);
-            double circleArea = betterCircle.GetArea();
+            double circleArea = circle.GetArea();
             betterCircle.ShowOrigin();
 
             CompoundShape compoundShape = new CompoundShape(7, 7);
@@ -133,7 +144,8 @@ namespace Bif3.Swe1.Oop {
             shapeStack.Push(line);
             Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
 
-            if (!shapeStack.IsEmpty()) {
+            if (!shapeStack.IsEmpty())
+            {
                 shapeStack.DescribeStack();
             }
 
@@ -145,6 +157,40 @@ namespace Bif3.Swe1.Oop {
             Console.WriteLine($"Is stack empty? {shapeStack.IsEmpty()}");
 
             Console.WriteLine("-----");
+
+            int aValueType = 3;
+       
+            int bValueType = aValueType;
+            bValueType = 4;
+            Console.WriteLine($"Valuetype assignments: a={aValueType}, b={bValueType}");
+
+            ClassWithMembers aReferenceType = new ClassWithMembers();
+            aReferenceType.IntProperty = 12;
+            ClassWithMembers bReferenceType = new ClassWithMembers();
+            bReferenceType.IntProperty = 13;
+            bReferenceType = aReferenceType;
+            bReferenceType.IntProperty = 14;
+            Console.WriteLine($"ReferenceType assignments: a={aReferenceType.IntProperty}, b={bReferenceType.IntProperty}");
+
+            ClassWithMembers nullableReferenceType = new ClassWithMembers();
+            nullableReferenceType = null;
+
+            if (nullableReferenceType !=null )
+                nullableReferenceType.WriteSomething();
+
+            int someCalculatedValue;
+            if (nullableReferenceType != null)
+                someCalculatedValue = 12 + nullableReferenceType.IntProperty;
+            else
+                someCalculatedValue = 12;
+            someCalculatedValue = (nullableReferenceType != null) ? (12 + nullableReferenceType.IntProperty) : 12;
+            someCalculatedValue = 12 + (nullableReferenceType?.IntProperty ?? 0);
+            Console.WriteLine($"Calc with nullables: someCalculatedValue={someCalculatedValue}");
+
+            // nullable value-types (reference type)
+            int? nullableInt = null;
+            int intValue = nullableInt ?? -1;
+            Console.WriteLine($"Nullable int: intValue={intValue}");
         }
     }
 }
