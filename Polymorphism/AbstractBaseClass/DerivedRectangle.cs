@@ -18,7 +18,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass
 
         public override double GetArea()
         {
-            return (_x2 - _x) * (_y2 - _y);
+            return (_x2 - X) * (_y2 - Y);
         }
 
         public override double GetPerimeter()

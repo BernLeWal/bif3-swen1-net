@@ -3,43 +3,50 @@
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.AbstractShape">
     <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIIAAQAAAAIAAAAAAAAAAAAAAEAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAIgAAAAAAAAAAAAAEAAABgGAAAYAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\AbstractShape.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedCircle">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAEAAAAAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\DerivedCircle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedLine">
-    <Position X="2.5" Y="3.5" Width="1.5" />
+    <Position X="2.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIIAAQAAAAIAAAAAAAAAAAAAAEAAAAAEAAAAAA=</HashCode>
+      <HashCode>AAAAAAIIAAQAAAAIAAADAAAAAAAAAAEAAAAAGAAAAAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\DerivedLine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedCompoundShape">
-    <Position X="9" Y="3.5" Width="1.5" />
+    <Position X="13.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAIAAAAAAAAAAAAAAUAAAAAEAAAAAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\DerivedCompoundShape.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedRectangle">
-    <Position X="4.5" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAQAAAAIAAAAAAAAAAAAAAEAAAAAEAAAAAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\DerivedRectangle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedSquare">
-    <Position X="6.5" Y="3.5" Width="1.5" />
+    <Position X="7" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAEAAAEAAAAAA=</HashCode>
       <FileName>Polymorphism\AbstractBaseClass\DerivedSquare.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass.DerivedPyramid">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIABAAAAAAIAAAAAEAAAAAAAAEAAAAAGAAAAAA=</HashCode>
+      <FileName>Polymorphism\AbstractBaseClass\DerivedPyramid.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
