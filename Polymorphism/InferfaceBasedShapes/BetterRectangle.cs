@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes
 {
-    public class BetterRectangle : IBetterShapeComposition
+    public class BetterRectangle : IBetterShapeComposition, IBetterShapeMath
     {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }

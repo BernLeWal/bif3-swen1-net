@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    class BetterCircle : IBetterShapeComposition {
+    class BetterCircle : IBetterShapeComposition, IBetterShapeMath {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }
 

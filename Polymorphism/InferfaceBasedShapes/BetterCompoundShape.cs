@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    class BetterCompoundShape : IBetterShapeComposition {
+    class BetterCompoundShape : IBetterShapeComposition, IBetterShapeMath {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }
 
@@ -20,7 +20,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
         public double GetArea() {
             double tempArea = 0;
             foreach (IBetterShapeComposition shape in _shapeList) {
-                tempArea += shape.GetArea();
+                tempArea += (shape is IBetterShapeMath s) ? s.GetArea() : 0;
             }
             Console.WriteLine($"Sum of all perimeters: {tempArea}");
 
@@ -30,7 +30,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
         public double GetPerimeter() {
             double tempPerimeter = 0;
             foreach (IBetterShapeComposition shape in _shapeList) {
-                tempPerimeter += shape.GetPerimeter();
+                tempPerimeter += (shape is IBetterShapeMath s) ? s.GetPerimeter() : 0;
             }
             Console.WriteLine($"Sum of all perimeters: {tempPerimeter}");
 
